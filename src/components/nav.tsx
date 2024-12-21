@@ -1,19 +1,19 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { cn } from '@/lib/utils'
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Places To Stay', href: '/places-to-stay' },
-  { name: 'RSVP', href: '/rsvp' },
-  { name: 'Photos', href: '/photos' },
-  { name: 'Details', href: '/details' },
-]
+  { name: "Home", href: "/" },
+  { name: "Places To Stay", href: "/places-to-stay" },
+  { name: "RSVP", href: "/rsvp" },
+  { name: "Photos", href: "/photos" },
+  { name: "Details", href: "/details" },
+];
 
 export function Navigation() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <nav className="w-full border-b border-[#E2E8F0] bg-white/50 backdrop-blur-sm">
@@ -26,10 +26,10 @@ export function Navigation() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium transition-colors',
+                    "inline-flex items-center h-8 border-b-2 px-1 pt-1 text-sm font-medium transition-colors",
                     pathname === item.href
-                      ? 'border-[var(--color-primary)] text-[var(--color-primary)]'
-                      : 'border-transparent text-[var(--color-text-light)] hover:border-[var(--color-primary)] hover:text-[var(--color-text)]'
+                      ? "border-[var(--color-primary)] text-[var(--color-primary)]"
+                      : "border-transparent text-[var(--color-text-light)] hover:border-[var(--color-primary)] hover:text-[var(--color-text)]"
                   )}
                 >
                   {item.name}
@@ -40,6 +40,5 @@ export function Navigation() {
         </div>
       </div>
     </nav>
-  )
+  );
 }
-
